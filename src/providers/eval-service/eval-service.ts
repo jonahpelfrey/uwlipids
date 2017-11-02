@@ -10,19 +10,19 @@ export class EvalServiceProvider {
 
 	constructor(public http: Http) {}
 
-  	public getAgeEval(age: number): Object<any> {
+  	public getAgeEval(age: number): any {
 
   		if(age < 2) { return CustomResponses.ZERO_TO_ONE; }
 
   		if(age >= 2 && age <= 19) { return CustomResponses.TWO_TO_NINETEEN; }
 
-  		if(age >= 20 && age <= 24) { return CustomResponses.TWENTY_TO_24; }
+  		if(age >= 20 && age <= 24) { return CustomResponses.TWENTY_TO_TWENTYFOUR; }
 
   		if(age >= 25) { return CustomResponses.TWENTYFIVE_PLUS; }
 
   	}
 
-  	public getFastingEval(input: any): Object<any> {
+  	public getFastingEval(input: any): any {
 
   		
   	}

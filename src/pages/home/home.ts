@@ -9,7 +9,9 @@ import { Patient, Status } from '../../models/patient';
 
 export class HomePage implements OnInit{
 
-	patient: Patient = {};
+	age: number = 50;
+	showFasting: boolean = false;
+	showCholesterol: boolean = false;
 
  	constructor(public navCtrl: NavController) {
 
