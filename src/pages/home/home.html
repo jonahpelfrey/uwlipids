@@ -20,7 +20,8 @@
   	</ion-list>
 
   	<div text-center class="validation">
-  		<button ion-button color="secondary" (click)="showFasting = true;">Check</button>
+  		<button ion-button color="secondary" (click)="showFasting = true;" *ngIf="!showFasting">Check</button>
+  		<button ion-button full outline color="secondary" *ngIf="showFasting">VALIDATED</button>
   	</div>
 
   	<div *ngIf="showFasting">
