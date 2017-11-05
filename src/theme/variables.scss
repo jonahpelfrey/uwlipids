@@ -22,7 +22,7 @@ $app-direction: ltr;
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
 
-$list-background-color: #ffffff;
+// $list-background-color: #ffffff;
 
 
 
@@ -49,19 +49,22 @@ $colors: (
 // --------------------------------------------------
 // iOS only Sass variables can go here
 
-$list-ios-header-background-color: #efeff4;
+// $list-ios-header-background-color: #efeff4;
 $list-ios-margin-bottom: 10px;
-$list-ios-header-font-size: 2.0rem;
 
+$list-ios-header-font-size: 1.5rem;
 
 
 
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
+$list-md-margin-bottom: 10px;
 
-
-
+$list-md-header-color: #000;
+$list-md-header-font-size: 1.5rem;
+$list-md-header-margin-bottom: 0px;
+$list-md-header-border-top: 0px;
 
 
 

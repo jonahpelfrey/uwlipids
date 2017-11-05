@@ -7,11 +7,11 @@
 <ion-content class="patient">
 
   	<ion-list style="padding-top: 20px;">
-  		<ion-list-header>
+  		<ion-list-header [ngClass]="ageStyle">
   			Age: {{age}}
   		</ion-list-header>
     	<ion-item>
-	      	<ion-range [(ngModel)]="age">
+	      	<ion-range [(ngModel)]="age" [disabled]="ageSubmitted">
 	        	<ion-icon range-left small name="body"></ion-icon>
 	        	<ion-icon range-right name="body"></ion-icon>
 	      	</ion-range>
@@ -20,62 +20,57 @@
   	</ion-list>
 
   	<div text-center class="validation">
-  		<button ion-button color="secondary" (click)="showFasting = true;" *ngIf="!showFasting">Check</button>
-  		<button ion-button full outline color="secondary" *ngIf="showFasting">VALIDATED</button>
+  		<button ion-button outline color="default" (click)="resetAge()">Reset</button>
+  		<button ion-button color="default" (click)="validateAge()">Enter</button>
   	</div>
 
-  	<div *ngIf="showFasting">
-	  	<ion-list radio-group>
 
-	  		<ion-list-header>Fasting</ion-list-header>
+  	<ion-list radio-group>
 
-	  		<ion-item>
-	  	  		<ion-label color="dark">Unsure</ion-label>
-	      		<ion-radio value="unsure" checked></ion-radio>
-	  		</ion-item>
+  		<ion-list-header [ngClass]="{defaultAge: true}">Fasting</ion-list-header>
 
-	  		<ion-item>
-	  			<ion-label color="dark">Fasting</ion-label>
-	  			<ion-radio value="fasting"></ion-radio>
-	  		</ion-item>
+  		<ion-item>
+  	  		<ion-label color="dark">Unsure</ion-label>
+      		<ion-radio value="unsure" checked></ion-radio>
+  		</ion-item>
 
-	  		<ion-item>
-	  			<ion-label color="dark">Nonfasting</ion-label>
-	  			<ion-radio value="nonfasting"></ion-radio>
-	  		</ion-item>
-	  		
-	  	</ion-list>
+  		<ion-item>
+  			<ion-label color="dark">Fasting</ion-label>
+  			<ion-radio value="fasting"></ion-radio>
+  		</ion-item>
 
-	  	<div text-center class="validation">
-	  		<button ion-button color="secondary" (click)="showCholesterol = true;">Check</button>
-	  	</div>
+  		<ion-item>
+  			<ion-label color="dark">Nonfasting</ion-label>
+  			<ion-radio value="nonfasting"></ion-radio>
+  		</ion-item>
+  		
+  	</ion-list>
+
+  	<div text-center class="validation">
+  		<button ion-button color="default" (click)="validateFasting()">Enter</button>
   	</div>
 
-  	<div *ngIf="showCholesterol">
-	  	<ion-list>
-	  		<ion-list-header>Cholesterol</ion-list-header>
 
-	  		<ion-item>
-	  			<ion-label color="dark">HDL</ion-label>
-	    		<ion-input type="number" placeholder="0"></ion-input>
-	  		</ion-item>
+  	<ion-list>
+  		<ion-list-header [ngClass]="{defaultAge: true}">Cholesterol</ion-list-header>
 
-	  		<ion-item>
-	  			<ion-label color="dark">Non-HDL</ion-label>
-	    		<ion-input type="number" placeholder="0"></ion-input>
-	  		</ion-item>
+  		<ion-item>
+  			<ion-label color="dark">HDL</ion-label>
+    		<ion-input type="number" placeholder="0"></ion-input>
+  		</ion-item>
 
-	  		<ion-item>
-	  			<ion-label color="dark">Total</ion-label>
-	    		<ion-input type="number" placeholder="0"></ion-input>
-	  		</ion-item>
+  		<ion-item>
+  			<ion-label color="dark">Non-HDL</ion-label>
+    		<ion-input type="number" placeholder="0"></ion-input>
+  		</ion-item>
 
-	  	</ion-list>
+  		<ion-item>
+  			<ion-label color="dark">Total</ion-label>
+    		<ion-input type="number" placeholder="0"></ion-input>
+  		</ion-item>
 
-	  	<div text-center class="validation">
-	  		<button ion-button color="secondary">Check</button>
-	  	</div>
-  	</div>
+  	</ion-list>
+
 
 
 </ion-content>

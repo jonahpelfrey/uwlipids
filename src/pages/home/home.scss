@@ -8,4 +8,36 @@ page-home {
 		margin-bottom: 30px;
 	}
 
+	.defaultAge {
+		background-color: #efeff4;
+	}
+
+	.validAge {
+		background-color: #32db64;
+	}
+
+	.ageWarning {
+		background-color: blue;
+	}
+
+	.validFasting {
+		background-color: #32db64;
+	}
+
+	.validCholesterol {
+		background-color: #32db64;
+	}
+
+	.text-valid {
+		background-color: #32db64;
+	}
+
+	.text-warning {
+		background-color: #f7f30e;
+	}
+
+	.text-default {
+		background-color: #efeff4;
+	}
+
 }
