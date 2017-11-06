@@ -20,6 +20,18 @@ export class HomePage implements OnInit{
 
 	fastingValid: boolean = false;
 	fastingSelected: boolean = false;
+	fastingStyle = {
+		'text-default': true,
+		'text-warning': false,
+		'text-valid': false
+	};
+
+	cholesterolStyle = {
+		'text-default': true,
+		'text-warning': false,
+		'text-valid': false
+	};
+
 
  	constructor(public navCtrl: NavController) {
 
@@ -49,11 +61,26 @@ export class HomePage implements OnInit{
   			}
   		}
   		
-  	}
+  	};
 
   	validateFasting(): void {
   		this.fastingSelected = true;
   		this.fastingValid = true;
+
+  		this.fastingStyle = {
+  			'text-default': false,
+			'text-warning': false,
+			'text-valid': true
+  		}
+  	};
+
+  	validateCholesterol(): void {
+  		this.cholesterolStyle = {
+			'text-default': false,
+			'text-warning': false,
+			'text-valid': true
+		};
+
   	}
 
   	resetAge(): void {
@@ -77,3 +104,4 @@ export class HomePage implements OnInit{
   	}
 
 }
+

@@ -6,6 +6,8 @@
 
 <ion-content class="patient">
 
+	<div class="high-performance-frame"></div>
+
   	<ion-list style="padding-top: 20px;">
   		<ion-list-header [ngClass]="ageStyle">
   			Age: {{age}}
@@ -27,7 +29,7 @@
   	<div *ngIf="ageValid">
 	  	<ion-list radio-group>
 
-	  		<ion-list-header [ngClass]="{defaultAge: true}">Fasting</ion-list-header>
+	  		<ion-list-header [ngClass]="fastingStyle">Fasting</ion-list-header>
 
 	  		<ion-item>
 	  	  		<ion-label color="dark">Unsure</ion-label>
@@ -54,7 +56,7 @@
 
   	<div *ngIf="ageValid && fastingValid">
 	  	<ion-list>
-	  		<ion-list-header [ngClass]="{defaultAge: true}">Cholesterol</ion-list-header>
+	  		<ion-list-header [ngClass]="cholesterolStyle">Cholesterol</ion-list-header>
 
 	  		<ion-item>
 	  			<ion-label color="dark">HDL</ion-label>
@@ -72,6 +74,11 @@
 	  		</ion-item>
 
 	  	</ion-list>
+
+	  	<div text-center class="validation">
+	  		<button ion-button outline color="default">Reset</button>
+	  		<button ion-button color="default" (click)="validateCholesterol()">Enter</button>
+	  	</div>
   	</div>
 
 
