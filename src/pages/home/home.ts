@@ -96,6 +96,12 @@ export class HomePage implements OnInit{
   			'text-warning': false,
   			'text-valid': false
   		};
+
+        this.fastingStyle = {
+             'text-default': true,
+            'text-warning': false,
+            'text-valid': false
+          }
   	}
 
   	resetFasting(): void {

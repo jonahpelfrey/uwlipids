@@ -8,10 +8,11 @@
 
 	<div class="high-performance-frame"></div>
 
-  	<ion-list style="padding-top: 20px;">
+  	<ion-list style="padding-top: 20px;" no-lines>
   		<ion-list-header [ngClass]="ageStyle">
-  			Age: {{age}}
+  			Age
   		</ion-list-header>
+  		<ion-item style="text-align: center;">{{age}}</ion-item>
     	<ion-item>
 	      	<ion-range [(ngModel)]="age" [disabled]="ageSubmitted">
 	        	<ion-icon range-left small name="body"></ion-icon>
@@ -33,7 +34,7 @@
 
 	  		<ion-item>
 	  	  		<ion-label color="dark">Unsure</ion-label>
-	      		<ion-radio [disabled]="fastingSelected" value="unsure" checked></ion-radio>
+	      		<ion-radio [disabled]="fastingSelected" value="unsure"></ion-radio>
 	  		</ion-item>
 
 	  		<ion-item>
