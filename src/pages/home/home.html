@@ -21,55 +21,58 @@
 
   	<div text-center class="validation">
   		<button ion-button outline color="default" (click)="resetAge()">Reset</button>
-  		<button ion-button color="default" (click)="validateAge()">Enter</button>
+  		<button ion-button color="default" [disabled]="ageSubmitted" (click)="validateAge()">Enter</button>
   	</div>
 
+  	<div *ngIf="ageValid">
+	  	<ion-list radio-group>
 
-  	<ion-list radio-group>
+	  		<ion-list-header [ngClass]="{defaultAge: true}">Fasting</ion-list-header>
 
-  		<ion-list-header [ngClass]="{defaultAge: true}">Fasting</ion-list-header>
+	  		<ion-item>
+	  	  		<ion-label color="dark">Unsure</ion-label>
+	      		<ion-radio [disabled]="fastingSelected" value="unsure" checked></ion-radio>
+	  		</ion-item>
 
-  		<ion-item>
-  	  		<ion-label color="dark">Unsure</ion-label>
-      		<ion-radio value="unsure" checked></ion-radio>
-  		</ion-item>
+	  		<ion-item>
+	  			<ion-label color="dark">Fasting</ion-label>
+	  			<ion-radio  value="fasting"></ion-radio>
+	  		</ion-item>
 
-  		<ion-item>
-  			<ion-label color="dark">Fasting</ion-label>
-  			<ion-radio value="fasting"></ion-radio>
-  		</ion-item>
+	  		<ion-item>
+	  			<ion-label color="dark">Nonfasting</ion-label>
+	  			<ion-radio [disabled]="fastingSelected" value="nonfasting"></ion-radio>
+	  		</ion-item>
+	  		
+	  	</ion-list>
 
-  		<ion-item>
-  			<ion-label color="dark">Nonfasting</ion-label>
-  			<ion-radio value="nonfasting"></ion-radio>
-  		</ion-item>
-  		
-  	</ion-list>
-
-  	<div text-center class="validation">
-  		<button ion-button color="default" (click)="validateFasting()">Enter</button>
+	  	<div text-center class="validation">
+	  		<button ion-button outline color="default" (click)="resetFasting()">Reset</button>
+	  		<button ion-button color="default" [disabled]="fastingSelected" (click)="validateFasting()">Enter</button>
+	  	</div>
   	</div>
 
+  	<div *ngIf="ageValid && fastingValid">
+	  	<ion-list>
+	  		<ion-list-header [ngClass]="{defaultAge: true}">Cholesterol</ion-list-header>
 
-  	<ion-list>
-  		<ion-list-header [ngClass]="{defaultAge: true}">Cholesterol</ion-list-header>
+	  		<ion-item>
+	  			<ion-label color="dark">HDL</ion-label>
+	    		<ion-input type="number" placeholder="0"></ion-input>
+	  		</ion-item>
 
-  		<ion-item>
-  			<ion-label color="dark">HDL</ion-label>
-    		<ion-input type="number" placeholder="0"></ion-input>
-  		</ion-item>
+	  		<ion-item>
+	  			<ion-label color="dark">Non-HDL</ion-label>
+	    		<ion-input type="number" placeholder="0"></ion-input>
+	  		</ion-item>
 
-  		<ion-item>
-  			<ion-label color="dark">Non-HDL</ion-label>
-    		<ion-input type="number" placeholder="0"></ion-input>
-  		</ion-item>
+	  		<ion-item>
+	  			<ion-label color="dark">Total</ion-label>
+	    		<ion-input type="number" placeholder="0"></ion-input>
+	  		</ion-item>
 
-  		<ion-item>
-  			<ion-label color="dark">Total</ion-label>
-    		<ion-input type="number" placeholder="0"></ion-input>
-  		</ion-item>
-
-  	</ion-list>
+	  	</ion-list>
+  	</div>
 
 
 

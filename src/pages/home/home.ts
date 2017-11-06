@@ -11,11 +11,15 @@ export class HomePage implements OnInit{
 
 	age: number = 50;
 	ageSubmitted: boolean = false;
+	ageValid: boolean = false;
 	ageStyle = {
 		'text-default': true,
 		'text-warning': false,
 		'text-valid': false
 	};
+
+	fastingValid: boolean = false;
+	fastingSelected: boolean = false;
 
  	constructor(public navCtrl: NavController) {
 
@@ -37,6 +41,7 @@ export class HomePage implements OnInit{
   			}
   		}
   		else {
+  			this.ageValid = true;
   			this.ageStyle = {
   				'text-default': false,
 				'text-warning': false,
@@ -46,14 +51,29 @@ export class HomePage implements OnInit{
   		
   	}
 
+  	validateFasting(): void {
+  		this.fastingSelected = true;
+  		this.fastingValid = true;
+  	}
+
   	resetAge(): void {
   		this.age = 50;
+
   		this.ageSubmitted = false;
+  		this.ageValid = false;
+  		this.fastingSelected = false;
+  		this.fastingValid = false;
+
   		this.ageStyle = {
   			'text-default': true,
   			'text-warning': false,
   			'text-valid': false
   		};
+  	}
+
+  	resetFasting(): void {
+  		this.fastingSelected = false;
+  		this.fastingValid = false;
   	}
 
 }
